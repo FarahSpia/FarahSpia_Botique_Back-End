@@ -1,0 +1,20 @@
+{
+  "name": "farahspia_botique_e-commerce",
+  "version": "1.0.0",
+  "description": "🛍️ FarahSpia A modern Back-End e-commerce platform for a clothing boutique.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Mersad Mosayebi (FarahSpia)",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
