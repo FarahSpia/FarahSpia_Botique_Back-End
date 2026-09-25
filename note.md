@@ -11,6 +11,7 @@ first : `npm install` (once for installing packages node_modules & ...)
 
 `npx prisma generate`
 
+-----------------------
 model User{
   id String @id @default(uuid())
   userName String
@@ -21,7 +22,6 @@ model User{
   favorites Favorite[]
 
 }
-
 after you write model you must run this order to database add this model :
 
 you must run this order:

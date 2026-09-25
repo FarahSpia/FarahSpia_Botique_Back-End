@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../prisma/generated"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User{
+  id String @id @default(uuid())
+  userName String
+  email String @unique
+  password String 
+  role  Role @default(user)
+  images UserImage[]
+  favorites Favorite[]
+
+}
+
+model Product{
+   id String @id @default(uuid())
+   title String
+   description String
+   create_at DateTime @default(now())
+   price Int
+   stock Int
+   categories Category[]
+   images ProductImage[]
+   favorites Favorite[]
+
+}
+
+model UserImage{
+   id Int @id @default(autoincrement())
+   url String
+   user_id String
+   user User @relation(fields: [user_id], references: [id])
+}
+
+model ProductImage{
+   id Int @id @default(autoincrement())
+   url String
+   product_id String
+   product Product @relation(fields: [product_id], references: [id])
+}
+
+model Category{
+   id Int @id @default(autoincrement())
+   name String @unique
+   products Product[]
+
+}
+
+model Favorite{
+   id Int @id @default(autoincrement())
+   user_id String
+   product_id String
+
+   user User @relation(fields: [user_id],references: [id])
+   product Product @relation(fields: [product_id],references: [id])
+}
+
+
+
+enum Role {
+  user
+  admin
+}

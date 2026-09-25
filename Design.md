@@ -123,6 +123,8 @@
 ## Technologies  
 - **Express.js**  
 - **Prisma + SQLite**  
+      |_version:**npm i prisma@7.10.0 @prisma/client@7.10.0 @prisma/adapter-better-sqlite3**
+                **npx  prisma init --datasource-provider sqlite --output ../prisma/generated**
 - **JWT** for authentication  
 - **bcrypt** for password hashing  
 - **Multer** for file uploads  
