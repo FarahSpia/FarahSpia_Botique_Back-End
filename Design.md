@@ -75,7 +75,7 @@
 |-middleware
 |   |
 |   |_auth.js
-|   |_error_Handling.js
+|   |_response_Handler.js
 |
 |-prisma
 |   |
